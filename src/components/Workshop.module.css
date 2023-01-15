@@ -1,0 +1,39 @@
+.workshop {
+ width: 40%;
+}
+
+.buttonsActionsWrapper {
+    display: flex;
+    gap: 1vw;
+    padding: 1vw;
+}
+
+.workshopForm {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw;
+}
+
+.workshopInput {
+    width: 70%;
+}
+
+.workshopColorLabel {
+    position: relative;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+.workshopColorLabel input {
+    position: absolute;
+    height: 4vw;
+    width: 4vw;
+    top: -1vw;
+    left: -1vw;
+}

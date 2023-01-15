@@ -1,0 +1,10 @@
+.navigation {
+    width: 100%;
+    background-color: white;
+    padding: 1vw;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 1vw;
+}
