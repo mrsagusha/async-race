@@ -1,16 +1,32 @@
 import { ICar } from '../interfaces/interfaces';
 import CarTrack from './CarTrack';
 
-function Garage({ cars }: { cars: ICar[] }) {
+function Garage({
+  cars,
+  deleteCar,
+  selectCarForUpdatting,
+}: {
+  cars: ICar[];
+  deleteCar(car: ICar): void;
+  selectCarForUpdatting(car: ICar): void;
+}) {
   return (
     <>
-      <h1>Garage</h1>
+      <h1>Garage — {`${cars.length} cars`}</h1>
       <h3>Page</h3>
       <div>
         {cars.map((car: ICar) => {
-          return <CarTrack car={car} />;
+          return (
+            <CarTrack
+              key={car.id}
+              car={car}
+              deleteCar={deleteCar}
+              selectCarForUpdatting={selectCarForUpdatting}
+            />
+          );
         })}
       </div>
+      <ul></ul>
     </>
   );
 }

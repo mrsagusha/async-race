@@ -1,7 +1,13 @@
 .carSelectButtons {
     display: flex;
     gap: 1vw;
+    align-items: center;
     padding: 1vw;
+}
+
+.carSelectButtons p {
+    font-size: 1vw;
+    font-weight: 600;
 }
 
 .carActionsButton {
