@@ -28,3 +28,13 @@
     top: 3vh;
     left: 10%;
 }
+
+.drive {
+    animation: drive;
+    animation-fill-mode: forwards
+}
+
+@keyframes drive {
+    0% {left: 10%}
+    100% {left: 90%}
+}

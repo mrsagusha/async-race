@@ -24,12 +24,12 @@ function Main({
     setCarForUpdate(car);
   };
 
-  const updateTextHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUpdateText(e.target.value);
+  const updateTextHandler = (e?: React.ChangeEvent<HTMLInputElement>) => {
+    setUpdateText(e ? e.target.value : '');
   };
 
-  const updateColorHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUpdateColor(e.target.value);
+  const updateColorHandler = (e?: React.ChangeEvent<HTMLInputElement>) => {
+    setUpdateColor(e ? e.target.value : '');
   };
 
   return (

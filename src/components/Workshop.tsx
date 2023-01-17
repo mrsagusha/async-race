@@ -36,6 +36,8 @@ function Workshop({
         color: createColor,
       });
       addCar(res.data);
+      setCreateText('');
+      setCreateColor('#000000');
     } catch (error) {
       console.log(error);
     }
@@ -43,6 +45,7 @@ function Workshop({
 
   const updateCarHandler = async (e: React.SyntheticEvent) => {
     handleSubmit(e);
+    console.log(carForUpdate);
     try {
       const res = await axios.put(
         `http://127.0.0.1:3000/garage/${carForUpdate ? carForUpdate.id : ''}`,
@@ -52,7 +55,6 @@ function Workshop({
         }
       );
       if (carForUpdate) updateCar(carForUpdate, text, color);
-      console.log(text);
     } catch (error) {
       console.log(error);
     }
