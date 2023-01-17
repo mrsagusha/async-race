@@ -3,7 +3,7 @@ import { HandySvg } from 'handy-svg';
 import bmw from '../assets/images/bmw.svg';
 import Button from './UI/Button';
 import ButtonAction from './UI/ButtonAction';
-import { ICar, IMovementResponse } from '../interfaces/interfaces';
+import { ICar } from '../interfaces/interfaces';
 import styles from './CarTrack.module.css';
 import { useState } from 'react';
 
@@ -11,10 +11,14 @@ function CarTrack({
   car,
   deleteCar,
   selectCarForUpdatting,
+  allRace,
+  startAllRace,
 }: {
   car: ICar;
   deleteCar(car: ICar): void;
   selectCarForUpdatting(car: ICar): void;
+  allRace: boolean;
+  startAllRace(): void;
 }) {
   const [style, setStyle] = useState({});
   const [isDriving, setIsDriving] = useState(false);
@@ -40,7 +44,13 @@ function CarTrack({
     });
   };
 
-  console.log(style);
+  if (allRace) {
+    (async function () {
+      await startDrivingHandler();
+      setIsDriving(true);
+      startAllRace();
+    })();
+  }
 
   return (
     <div>

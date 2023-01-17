@@ -12,6 +12,7 @@ function Workshop({
   updateColor,
   carForUpdate,
   updateCar,
+  startAllRace,
 }: {
   addCar(car: ICar): void;
   text: string;
@@ -20,6 +21,7 @@ function Workshop({
   updateColor(e: React.ChangeEvent<HTMLInputElement>): void;
   carForUpdate: null | ICar;
   updateCar(car: ICar, text: string, color: string): void;
+  startAllRace(): void;
 }) {
   const [createText, setCreateText] = useState('');
   const [createColor, setCreateColor] = useState('#000000');
@@ -89,7 +91,7 @@ function Workshop({
         <Button onClick={updateCarHandler}>Update</Button>
       </form>
       <div className={styles.buttonsActionsWrapper}>
-        <Button>Race</Button>
+        <Button onClick={startAllRace}>Race</Button>
         <Button>Reset</Button>
         <Button>Generate cars</Button>
       </div>

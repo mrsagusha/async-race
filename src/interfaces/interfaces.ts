@@ -9,8 +9,3 @@ export interface ICar {
   color: string;
   id: number;
 }
-
-export interface IMovementResponse {
-  velocity: number;
-  distance: number;
-}

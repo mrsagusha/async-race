@@ -31,7 +31,8 @@
 
 .drive {
     animation: drive;
-    animation-fill-mode: forwards
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
 }
 
 @keyframes drive {

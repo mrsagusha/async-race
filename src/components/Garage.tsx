@@ -5,10 +5,14 @@ function Garage({
   cars,
   deleteCar,
   selectCarForUpdatting,
+  allRace,
+  startAllRace,
 }: {
   cars: ICar[];
   deleteCar(car: ICar): void;
   selectCarForUpdatting(car: ICar): void;
+  allRace: boolean;
+  startAllRace(): void;
 }) {
   return (
     <>
@@ -22,6 +26,8 @@ function Garage({
               car={car}
               deleteCar={deleteCar}
               selectCarForUpdatting={selectCarForUpdatting}
+              allRace={allRace}
+              startAllRace={startAllRace}
             />
           );
         })}
