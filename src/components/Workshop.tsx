@@ -72,6 +72,7 @@ function Workshop({
         ></input>
         <label className={styles.workshopColorLabel}>
           <input
+            className={styles.workshopInput}
             type="color"
             value={createColor}
             onChange={(e) => setCreateColor(e.target.value)}

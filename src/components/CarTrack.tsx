@@ -1,11 +1,11 @@
+import { useState } from 'react';
 import axios from 'axios';
-import { HandySvg } from 'handy-svg';
-import bmw from '../assets/images/bmw.svg';
+import { FaFlagCheckered } from 'react-icons/fa';
 import Button from './UI/Button';
 import ButtonAction from './UI/ButtonAction';
 import { ICar } from '../interfaces/interfaces';
 import styles from './CarTrack.module.css';
-import { useState } from 'react';
+import CarIco from './CarIco';
 
 function CarTrack({
   car,
@@ -41,7 +41,13 @@ function CarTrack({
     });
     setStyle({
       animationDuration: `${res.data.distance / res.data.velocity}ms`,
+      fill: 'red',
     });
+    console.log(res);
+  };
+
+  const returnCarHandler = () => {
+    setIsDriving(false);
   };
 
   if (allRace) {
@@ -70,15 +76,16 @@ function CarTrack({
           >
             A
           </ButtonAction>
-          <ButtonAction action="stop">B</ButtonAction>
+          <ButtonAction action="return" onClick={returnCarHandler}>
+            B
+          </ButtonAction>
         </div>
-        <HandySvg
+        <CarIco
+          color={car.color}
           className={isDriving ? `${styles.car} ${styles.drive}` : styles.car}
           style={style}
-          src={bmw}
-          width="4vw"
-          height="4vw"
         />
+        <FaFlagCheckered className={styles.flag} />
       </div>
     </div>
   );

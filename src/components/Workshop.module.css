@@ -18,6 +18,9 @@
     width: 70%;
 }
 
+.workshopInput:hover {
+    cursor: text;
+}
 .workshopColorLabel {
     position: relative;
     width: 2vw;
