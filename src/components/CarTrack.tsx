@@ -13,12 +13,14 @@ function CarTrack({
   selectCarForUpdatting,
   allRace,
   startAllRace,
+  allReset,
 }: {
   car: ICar;
   deleteCar(car: ICar): void;
   selectCarForUpdatting(car: ICar): void;
   allRace: boolean;
   startAllRace(): void;
+  allReset: boolean;
 }) {
   const [style, setStyle] = useState({});
   const [isDriving, setIsDriving] = useState(false);
@@ -82,7 +84,11 @@ function CarTrack({
         </div>
         <CarIco
           color={car.color}
-          className={isDriving ? `${styles.car} ${styles.drive}` : styles.car}
+          className={
+            isDriving && !allReset
+              ? `${styles.car} ${styles.drive}`
+              : styles.car
+          }
           style={style}
         />
         <FaFlagCheckered className={styles.flag} />

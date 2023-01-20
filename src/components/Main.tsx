@@ -15,6 +15,7 @@ function Main({
   updateCar(car: ICar, text: string, color: string): void;
 }) {
   const [allRace, setAllRace] = useState(false);
+  const [allReset, setAllReset] = useState(false);
   const [updateText, setUpdateText] = useState('');
   const [updateColor, setUpdateColor] = useState('#000000');
   const [carForUpdate, setCarForUpdate] = useState<null | ICar>(null);
@@ -22,6 +23,12 @@ function Main({
   const startAllRaceHandler = () => {
     if (allRace) setAllRace(false);
     else setAllRace(true);
+    resetAllCarsHandler();
+  };
+
+  const resetAllCarsHandler = () => {
+    if (allRace) setAllReset(false);
+    else setAllReset(true);
   };
 
   const selectCarForUpdattingHandler = (car: ICar) => {
@@ -49,6 +56,7 @@ function Main({
         carForUpdate={carForUpdate}
         updateCar={updateCar}
         startAllRace={startAllRaceHandler}
+        resetAllCars={resetAllCarsHandler}
       />
       <Garage
         cars={cars}
@@ -56,6 +64,7 @@ function Main({
         selectCarForUpdatting={selectCarForUpdattingHandler}
         allRace={allRace}
         startAllRace={startAllRaceHandler}
+        allReset={allReset}
       />
     </>
   );

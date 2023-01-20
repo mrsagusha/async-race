@@ -13,6 +13,7 @@ function Workshop({
   carForUpdate,
   updateCar,
   startAllRace,
+  resetAllCars,
 }: {
   addCar(car: ICar): void;
   text: string;
@@ -22,6 +23,7 @@ function Workshop({
   carForUpdate: null | ICar;
   updateCar(car: ICar, text: string, color: string): void;
   startAllRace(): void;
+  resetAllCars(): void;
 }) {
   const [createText, setCreateText] = useState('');
   const [createColor, setCreateColor] = useState('#000000');
@@ -93,7 +95,7 @@ function Workshop({
       </form>
       <div className={styles.buttonsActionsWrapper}>
         <Button onClick={startAllRace}>Race</Button>
-        <Button>Reset</Button>
+        <Button onClick={resetAllCars}>Reset</Button>
         <Button>Generate cars</Button>
       </div>
     </div>
